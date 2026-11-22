@@ -47,7 +47,15 @@ export function listSubmissionsSync(): SubmissionRecord[] {
 }
 
 function persist(records: SubmissionRecord[]): boolean {
-  return writeJson(STORAGE_KEYS.submissions, records);
+  if (writeJson(STORAGE_KEYS.submissions, records)) return true;
+
+  // Large evidence thumbnails can exhaust localStorage. Retry without the
+  // embedded previews so the submission still completes and navigates.
+  const withoutThumbnails = records.map((record) => ({
+    ...record,
+    evidence: record.evidence.map((item) => ({ ...item, thumbnail: undefined })),
+  }));
+  return writeJson(STORAGE_KEYS.submissions, withoutThumbnails);
 }
 
 export function generateId(kind: SubmissionKind, records: SubmissionRecord[]): string {

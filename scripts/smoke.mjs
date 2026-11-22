@@ -119,14 +119,13 @@ try {
     check('review shows ready badge', await page.getByText('Ready to Submit').isVisible());
   });
 
-  await step('submit observation generates ID', async () => {
+  await step('submit observation generates ID on first click', async () => {
     await page.getByRole('button', { name: /Continue to final submission/ }).click();
     await page.getByRole('heading', { name: 'Submit Report' }).waitFor();
-    await page.getByRole('button', { name: /Submit Observation/ }).click();
-    await page.getByText('Confirmation required').waitFor();
-    await page.locator('input[type="checkbox"]').last().check();
+    // Submit is intentionally tapped once, without pre-ticking the checkbox.
     await page.getByRole('button', { name: /Submit Observation/ }).click();
     await page.getByRole('heading', { name: 'Submitted Successfully!' }).waitFor({ timeout: 10000 });
+    check('first-click submit opens SUBMIT 7', true);
     const text = await page.locator('.id-pill').innerText();
     observationId = text.match(/OBS-\d{4}-\d{4}/)?.[0] ?? '';
     check('unique observation id generated', Boolean(observationId), text);

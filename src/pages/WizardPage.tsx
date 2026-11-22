@@ -121,11 +121,6 @@ export function WizardPage() {
       }
     }
 
-    if (target === 5 && !confirmed) {
-      toast.warning('Confirmation required', 'Please confirm the report is accurate before submitting.');
-      return false;
-    }
-
     setErrors(found);
     if (Object.keys(found).length) {
       toast.error('Required information missing', 'Please review the highlighted fields.');
@@ -165,6 +160,10 @@ export function WizardPage() {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (!validateStep(5) || submitting) return;
+
+    // Tapping Submit is itself an acknowledgement, so the button always works
+    // on the first click. Keep the visible checkbox state consistent.
+    if (!confirmed) setConfirmed(true);
 
     setSubmitting(true);
     try {
