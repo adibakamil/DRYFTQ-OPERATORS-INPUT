@@ -65,6 +65,8 @@ function AppRoutes() {
 
             <Route element={<RequireRole />}>
               <Route path="/app/new" element={<WizardPage />} />
+              <Route path="/app/success/:id" element={<SuccessPage />} />
+              <Route path="/submit-7" element={<SuccessPage />} />
             </Route>
           </Route>
 
@@ -75,7 +77,6 @@ function AppRoutes() {
               <Route path="/app/quality-view" element={<ProductionQualityPage />} />
               <Route path="/app/history" element={<HistoryPage />} />
               <Route path="/app/profile" element={<ProfilePage />} />
-              <Route path="/app/success/:id" element={<SuccessPage />} />
             </Route>
           </Route>
         </Route>

@@ -193,6 +193,19 @@ try {
     }
   });
 
+  await step('SUBMIT 7 receipt page', async () => {
+    await page.goto(`${BASE}/submit-7`, { waitUntil: 'networkidle' });
+    await page.getByRole('heading', { name: 'Submitted Successfully!' }).waitFor();
+    check('SUBMIT 7 breadcrumb', await page.getByText('Step 7: Finished').isVisible());
+    check('7-step workflow strip', (await page.locator('.workflow-step').count()) === 7);
+    check(
+      'SUBMIT 7 site header + footer',
+      (await page.locator('.site-header').count()) === 1 &&
+        (await page.locator('.site-footer').count()) === 1,
+    );
+    await page.goto(`${BASE}/app/quality`, { waitUntil: 'networkidle' });
+  });
+
   await step('mobile layout has no horizontal overflow', async () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.getByRole('button', { name: 'Open navigation' }).click();

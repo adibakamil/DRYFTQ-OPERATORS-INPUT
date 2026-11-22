@@ -1,0 +1,165 @@
+/* ============================================================
+   SUBMIT 7 — receipt page breadcrumb + workflow stepper
+   Uses only existing design tokens.
+   ============================================================ */
+
+.submit7-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  background: var(--bg);
+}
+
+.submission-flow {
+  flex: none;
+  border-bottom: 1px solid var(--border-soft);
+  background: rgba(3, 9, 20, 0.8);
+}
+
+.submission-flow__inner {
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 13px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.submission-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.submission-breadcrumb__sep {
+  color: var(--border-strong);
+}
+
+.submission-breadcrumb strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.workflow-stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 2px 0;
+  scrollbar-width: none;
+}
+
+.workflow-stepper::-webkit-scrollbar {
+  display: none;
+}
+
+.workflow-segment {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+}
+
+.workflow-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.72;
+  white-space: nowrap;
+}
+
+.workflow-step__dot {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.workflow-step__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+}
+
+.workflow-step--done .workflow-step__dot {
+  border-color: var(--success);
+  background: var(--success-dim);
+  color: var(--success);
+}
+
+.workflow-line {
+  width: 12px;
+  height: 1px;
+  flex: none;
+  background: var(--success);
+}
+
+.workflow-line--active {
+  background: var(--primary);
+}
+
+.workflow-step--active {
+  opacity: 1;
+  padding: 4px 8px;
+  border: 1px solid rgba(241, 90, 25, 0.4);
+  border-radius: var(--radius-sm);
+  background: var(--primary-dim);
+}
+
+.workflow-step--active .workflow-step__dot {
+  width: 20px;
+  height: 20px;
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.workflow-step--active .workflow-step__label {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .submission-flow__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .workflow-step__label {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .submission-flow__inner {
+    padding: 10px 14px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .workflow-stepper {
+    width: 100%;
+  }
+
+  .success-page {
+    padding: 28px 14px;
+  }
+}
