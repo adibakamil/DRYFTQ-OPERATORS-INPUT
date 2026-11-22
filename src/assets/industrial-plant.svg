@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050a14"/>
+      <stop offset="34%" stop-color="#101c31"/>
+      <stop offset="62%" stop-color="#26324a"/>
+      <stop offset="82%" stop-color="#5c4238"/>
+      <stop offset="100%" stop-color="#8a4b25"/>
+    </linearGradient>
+    <radialGradient id="horizonGlow" cx="68%" cy="78%" r="55%">
+      <stop offset="0%" stop-color="#e8813b" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#a8542b" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#050a14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="flareGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd39a" stop-opacity="0.85"/>
+      <stop offset="30%" stop-color="#f28a33" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f15a19" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#101825"/>
+      <stop offset="42%" stop-color="#243143"/>
+      <stop offset="62%" stop-color="#1a2637"/>
+      <stop offset="100%" stop-color="#0a101c"/>
+    </linearGradient>
+    <linearGradient id="steelLight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a2636"/>
+      <stop offset="45%" stop-color="#3a4b61"/>
+      <stop offset="70%" stop-color="#223046"/>
+      <stop offset="100%" stop-color="#0d1522"/>
+    </linearGradient>
+    <linearGradient id="tank" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0c1420"/>
+      <stop offset="35%" stop-color="#2b3a4e"/>
+      <stop offset="55%" stop-color="#35465d"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="steam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8d6e6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#c8d6e6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a101a"/>
+      <stop offset="100%" stop-color="#03060c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <rect width="1600" height="1000" fill="url(#horizonGlow)"/>
+
+  <!-- Stars / faint signal lights -->
+  <g fill="#dbe6f2" opacity="0.5">
+    <circle cx="120" cy="90" r="1.4"/><circle cx="290" cy="140" r="1"/><circle cx="460" cy="70" r="1.2"/>
+    <circle cx="640" cy="120" r="0.9"/><circle cx="810" cy="60" r="1.3"/><circle cx="990" cy="110" r="1"/>
+    <circle cx="1180" cy="75" r="1.1"/><circle cx="1360" cy="130" r="1.5"/><circle cx="1510" cy="80" r="1"/>
+  </g>
+
+  <!-- Distant hills -->
+  <path d="M0 610 L120 585 L230 600 L360 560 L500 590 L640 552 L760 585 L900 545 L1040 580 L1180 548 L1330 585 L1460 555 L1600 590 L1600 720 L0 720 Z" fill="#1a2435" opacity="0.75"/>
+
+  <!-- Distant plant skyline -->
+  <g fill="#16202f" opacity="0.85">
+    <rect x="60" y="540" width="110" height="120"/>
+    <rect x="180" y="512" width="62" height="148"/>
+    <rect x="255" y="556" width="130" height="104"/>
+    <rect x="410" y="528" width="48" height="132"/>
+    <rect x="470" y="568" width="160" height="92"/>
+    <rect x="660" y="535" width="76" height="125"/>
+    <rect x="760" y="570" width="140" height="90"/>
+    <rect x="930" y="545" width="56" height="115"/>
+    <rect x="1000" y="565" width="180" height="95"/>
+    <rect x="1210" y="530" width="70" height="130"/>
+    <rect x="1300" y="558" width="150" height="102"/>
+    <rect x="1470" y="540" width="90" height="120"/>
+  </g>
+  <g stroke="#e9a464" stroke-width="2" opacity="0.35">
+    <path d="M185 530 h54 M185 552 h54 M185 574 h54"/>
+    <path d="M665 552 h66 M665 576 h66"/>
+    <path d="M1215 548 h60 M1215 572 h60"/>
+  </g>
+
+  <!-- Steam plumes -->
+  <g fill="url(#steam)">
+    <ellipse cx="235" cy="480" rx="52" ry="78"/>
+    <ellipse cx="300" cy="452" rx="40" ry="66"/>
+    <ellipse cx="700" cy="500" rx="46" ry="70"/>
+    <ellipse cx="1245" cy="492" rx="50" ry="74"/>
+    <ellipse cx="1330" cy="460" rx="36" ry="60"/>
+  </g>
+
+  <!-- Mid-ground refinery structures -->
+  <g>
+    <!-- Distillation column A -->
+    <rect x="330" y="330" width="62" height="330" fill="url(#steel)" stroke="#3c4c60" stroke-width="1.5"/>
+    <rect x="324" y="322" width="74" height="12" rx="3" fill="url(#steelLight)"/>
+    <g fill="#0a1019" stroke="#4a5c72" stroke-width="1">
+      <rect x="322" y="390" width="78" height="8"/><rect x="322" y="452" width="78" height="8"/>
+      <rect x="322" y="514" width="78" height="8"/><rect x="322" y="576" width="78" height="8"/>
+    </g>
+    <g fill="#f0a45c" opacity="0.85">
+      <circle cx="339" cy="399" r="2"/><circle cx="355" cy="461" r="2"/><circle cx="385" cy="523" r="2"/>
+    </g>
+
+    <!-- Distillation column B -->
+    <rect x="840" y="290" width="76" height="370" fill="url(#steel)" stroke="#45566c" stroke-width="1.5"/>
+    <rect x="833" y="281" width="90" height="13" rx="3" fill="url(#steelLight)"/>
+    <g fill="#0a1019" stroke="#4a5c72" stroke-width="1">
+      <rect x="832" y="360" width="92" height="9"/><rect x="832" y="430" width="92" height="9"/>
+      <rect x="832" y="500" width="92" height="9"/><rect x="832" y="570" width="92" height="9"/>
+    </g>
+
+    <!-- Spherical tanks -->
+    <g>
+      <circle cx="520" cy="548" r="58" fill="url(#tank)" stroke="#46586e" stroke-width="1.5"/>
+      <path d="M470 530 Q520 495 570 530" fill="none" stroke="#5d718a" stroke-width="1" opacity="0.6"/>
+      <rect x="492" y="602" width="14" height="56" fill="#121a28"/>
+      <rect x="534" y="602" width="14" height="56" fill="#121a28"/>
+      <circle cx="655" cy="572" r="44" fill="url(#tank)" stroke="#46586e" stroke-width="1.5"/>
+      <rect x="632" y="612" width="10" height="48" fill="#121a28"/>
+      <rect x="668" y="612" width="10" height="48" fill="#121a28"/>
+    </g>
+
+    <!-- Storage tanks -->
+    <g>
+      <rect x="1080" y="460" width="112" height="198" rx="6" fill="url(#tank)" stroke="#475a70" stroke-width="1.5"/>
+      <ellipse cx="1136" cy="460" rx="56" ry="13" fill="#2b3a4e" stroke="#5d718a" stroke-width="1"/>
+      <g stroke="#0a1019" stroke-width="2" opacity="0.8">
+        <path d="M1082 510 h108 M1082 566 h108 M1082 622 h108"/>
+      </g>
+      <rect x="1220" y="510" width="86" height="148" rx="5" fill="url(#tank)" stroke="#475a70" stroke-width="1.5"/>
+      <ellipse cx="1263" cy="510" rx="43" ry="10" fill="#2b3a4e" stroke="#5d718a" stroke-width="1"/>
+    </g>
+
+    <!-- Pipe racks -->
+    <g stroke="#2e3d51" stroke-width="7" fill="none">
+      <path d="M0 640 H1600"/>
+      <path d="M0 668 H1600"/>
+      <path d="M0 694 H1600"/>
+    </g>
+    <g stroke="#6a7d95" stroke-width="1.2" opacity="0.55" fill="none">
+      <path d="M0 636 H1600"/><path d="M0 664 H1600"/><path d="M0 690 H1600"/>
+    </g>
+    <g fill="#121a28">
+      <rect x="140" y="625" width="12" height="80"/><rect x="420" y="625" width="12" height="80"/>
+      <rect x="720" y="625" width="12" height="80"/><rect x="1020" y="625" width="12" height="80"/>
+      <rect x="1320" y="625" width="12" height="80"/><rect x="1530" y="625" width="12" height="80"/>
+    </g>
+
+    <!-- Vertical riser pipes -->
+    <g stroke="#33445a" stroke-width="9" fill="none">
+      <path d="M760 640 V430 H840"/>
+      <path d="M1010 640 V500 H1080"/>
+      <path d="M400 640 V470 H330"/>
+    </g>
+  </g>
+
+  <!-- Flare stack -->
+  <g>
+    <rect x="1420" y="238" width="20" height="410" fill="url(#steelLight)" stroke="#54677f" stroke-width="1"/>
+    <path d="M1414 250 L1426 250 L1446 268 L1446 274 L1414 274 L1414 250 Z" fill="#2a3a4f"/>
+    <circle cx="1430" cy="222" r="86" fill="url(#flareGlow)"/>
+    <path d="M1430 246 C1418 228 1424 210 1431 196 C1434 208 1442 216 1440 228 C1448 218 1448 208 1446 200 C1458 214 1458 234 1444 248 Z" fill="#ffb45e" opacity="0.95"/>
+    <path d="M1432 244 C1427 233 1430 222 1435 214 C1436 224 1442 229 1439 238 Z" fill="#fff0cf"/>
+  </g>
+
+  <!-- Cooling tower -->
+  <g>
+    <path d="M150 700 L196 420 L300 420 L346 700 Z" fill="url(#steel)" stroke="#45566c" stroke-width="1.5"/>
+    <g stroke="#0c1420" stroke-width="3" opacity="0.7">
+      <path d="M168 560 H328 M182 500 H314 M156 620 H340"/>
+    </g>
+    <ellipse cx="248" cy="420" rx="52" ry="10" fill="#314156"/>
+  </g>
+
+  <!-- Foreground platform / gantry silhouette -->
+  <g fill="url(#ground)">
+    <rect x="0" y="712" width="1600" height="288"/>
+    <rect x="0" y="700" width="1600" height="16"/>
+    <rect x="0" y="716" width="1600" height="4" fill="#1c2939"/>
+    <!-- railing posts -->
+    <g>
+      <rect x="60" y="626" width="6" height="76"/><rect x="220" y="626" width="6" height="76"/>
+      <rect x="380" y="626" width="6" height="76"/><rect x="540" y="626" width="6" height="76"/>
+      <rect x="700" y="626" width="6" height="76"/><rect x="860" y="626" width="6" height="76"/>
+      <rect x="1020" y="626" width="6" height="76"/><rect x="1180" y="626" width="6" height="76"/>
+      <rect x="1340" y="626" width="6" height="76"/><rect x="1500" y="626" width="6" height="76"/>
+    </g>
+    <rect x="0" y="632" width="1600" height="6"/>
+    <rect x="0" y="662" width="1600" height="5"/>
+  </g>
+
+  <!-- Industrial lamps -->
+  <g>
+    <g opacity="0.5" fill="#f1a45e">
+      <circle cx="220" cy="620" r="30"/><circle cx="700" cy="620" r="30"/><circle cx="1180" cy="620" r="30"/>
+    </g>
+    <g fill="#ffd39a">
+      <circle cx="220" cy="620" r="4"/><circle cx="700" cy="620" r="4"/><circle cx="1180" cy="620" r="4"/>
+    </g>
+  </g>
+
+  <!-- Worker silhouette on the gantry -->
+  <g fill="#040810" opacity="0.95" transform="translate(970 512)">
+    <!-- legs -->
+    <path d="M26 96 L22 158 L34 158 L40 108 L44 158 L56 158 L50 92 Z"/>
+    <!-- torso -->
+    <path d="M20 42 C20 30 30 24 40 24 C52 24 60 32 60 44 L58 98 L22 98 Z"/>
+    <!-- arms -->
+    <path d="M18 46 L6 92 L16 96 L30 56 Z"/>
+    <path d="M62 46 L76 88 L66 92 L52 56 Z"/>
+    <!-- head + hardhat -->
+    <circle cx="40" cy="14" r="13"/>
+    <path d="M24 12 C24 2 31 -4 40 -4 C49 -4 56 2 56 12 Z"/>
+    <rect x="21" y="10" width="38" height="5" rx="2"/>
+  </g>
+  <!-- reflective strip on jacket -->
+  <path d="M990 578 L1018 578" stroke="#79d6a0" stroke-width="2.5" opacity="0.75"/>
+
+  <!-- Foreground vignette -->
+  <rect width="1600" height="1000" fill="none"/>
+</svg>

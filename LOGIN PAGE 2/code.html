@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DRYFTQ Collect - Login</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#E84518',
+              orangeHover: '#d33b11',
+              darkBg: '#090D15',
+              cardBg: '#121722',
+              inputBg: '#171E2D',
+              borderDark: '#262F43',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="industrial-texture">
+    /* Subtle dot grid pattern on right side panel matching industrial display aesthetics */
+    .industrial-dots {
+      background-color: #090D15;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+    
+    /* Pixelated mosaic grid effect for DRYFTQ brand icon */
+    .pixel-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 6px);
+      grid-template-rows: repeat(7, 6px);
+      gap: 2.5px;
+    }
+
+    .pixel {
+      background-color: #E84518;
+      border-radius: 1px;
+    }
+
+    .pixel-dim {
+      background-color: #C0350E;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-black text-gray-100 flex flex-col h-screen w-screen overflow-hidden select-none font-sans antialiased">
+<!-- BEGIN: Browser Chrome / Window Header -->
+<header class="h-10 bg-[#1A1F29] border-b border-[#2C3445] flex items-center justify-between px-4 z-50 shrink-0" data-purpose="window-frame">
+<!-- Window Controls (Mac Style) -->
+<div class="flex items-center space-x-2 w-32">
+<span class="w-3 h-3 rounded-full bg-[#ED6A5E] border border-[#CF5347] inline-block shadow-sm"></span>
+<span class="w-3 h-3 rounded-full bg-[#F4BF4F] border border-[#D7A23A] inline-block shadow-sm"></span>
+<span class="w-3 h-3 rounded-full bg-[#61C554] border border-[#4DA540] inline-block shadow-sm"></span>
+<!-- Navigation arrows -->
+<div class="flex items-center space-x-2.5 ml-4 text-gray-500">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</div>
+</div>
+<!-- Center URL / Session Pill -->
+<div class="flex-1 max-w-xl mx-4">
+<div class="bg-[#262C3A] hover:bg-[#2C3343] transition-colors rounded-lg px-4 py-1 flex items-center justify-center space-x-2 text-xs text-gray-300 border border-[#353D50]/60 shadow-inner">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="tracking-wide font-mono text-[11px] text-gray-200">dexpfl_26Reryscall@doqts.com</span>
+</div>
+</div>
+<!-- Right Window Utility Icons -->
+<div class="flex items-center justify-end space-x-3.5 w-32 text-gray-400">
+<div class="w-4 h-4 rounded bg-[#E84518]/90 flex items-center justify-center text-[9px] text-white font-bold">1</div>
+<div class="w-4 h-4 rounded bg-[#10B981] flex items-center justify-center">
+<svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</div>
+<svg class="w-4 h-4 text-gray-400 hover:text-white cursor-pointer" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</header>
+<!-- END: Browser Chrome / Window Header -->
+<!-- BEGIN: Main Content Split Area -->
+<main class="flex-1 flex flex-col md:flex-row w-full h-[calc(100vh-2.5rem)] overflow-hidden">
+<!-- Left Section: Refinery Worker Photo -->
+<section class="relative w-full md:w-[53%] h-1/2 md:h-full overflow-hidden bg-[#0A0F1D]" data-purpose="industrial-hero-image">
+<img alt="Industrial engineer in white hardhat and navy jacket overlooking an illuminated petroleum refinery at dusk" class="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.08]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsdtBq_Y3cp8SJIyu-wtnWI_PYG-hSLd2fn_3GLjcuznwgvrkhUpO_i34inyuk3J-aRvk5hrvtjXHQmEN8WLNz9pet748icpXd2vkumrmcRKEeC_mPam9R0zD9mZsag4L3mZnHtRcZWcYUBVT3r4NIvSgAuu7brG0QUkZPzBQgjWoShY62_jsA_hrFrFlPymezW5Z6JsZ93MYyEDFGrmkaEjne65yRklbxYfAuYg"/>
+<!-- Photorealistic atmospheric overlay gradients matching the moody reference image -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#060A14]/90 via-transparent to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#090D15]/80 hidden md:block"></div>
+<!-- Subtle Refinery Status Marker on visual -->
+<div class="absolute bottom-6 left-6 flex items-center space-x-2 text-xs font-mono text-gray-400/80 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="tracking-wider uppercase text-[10px]">Plant North Sector • Operational</span>
+</div>
+</section>
+<!-- Right Section: Login Interface Panel -->
+<section class="w-full md:w-[47%] h-1/2 md:h-full industrial-dots flex flex-col justify-center items-center px-8 sm:px-12 lg:px-20 relative" data-purpose="login-form-container">
+<!-- Centered Authentication Card / Form Container -->
+<div class="w-full max-w-[420px] flex flex-col items-center">
+<!-- BEGIN: Brand Identity Header -->
+<div class="flex items-center space-x-4 mb-7" data-purpose="brand-logo">
+<!-- Pixelated 'D' Shape Icon constructed with accurate CSS grid -->
+<div aria-hidden="true" class="pixel-grid p-1 rounded-sm bg-black/40 border border-orange-950/40 shadow-lg shadow-orange-950/20">
+<!-- Row 1 -->
+<span class="pixel"></span><span class="pixel"></span><span class="pixel"></span><span class="pixel"></span><span class="invisible"></span><span class="invisible"></span>
+<!-- Row 2 -->
+<span class="pixel"></span><span class="pixel"></span><span class="invisible"></span><span class="invisible"></span><span class="pixel"></span><span class="invisible"></span>
+<!-- Row 3 -->
+<span class="pixel"></span><span class="pixel"></span><span class="invisible"></span><span class="invisible"></span><span class="invisible"></span><span class="pixel"></span>
+<!-- Row 4 (middle gap) -->
+<span class="pixel"></span><span class="pixel"></span><span class="pixel-dim"></span><span class="pixel-dim"></span><span class="invisible"></span><span class="pixel"></span>
+<!-- Row 5 -->
+<span class="pixel"></span><span class="pixel"></span><span class="invisible"></span><span class="invisible"></span><span class="invisible"></span><span class="pixel"></span>
+<!-- Row 6 -->
+<span class="pixel"></span><span class="pixel"></span><span class="invisible"></span><span class="invisible"></span><span class="pixel"></span><span class="invisible"></span>
+<!-- Row 7 -->
+<span class="pixel"></span><span class="pixel"></span><span class="pixel"></span><span class="pixel"></span><span class="invisible"></span><span class="invisible"></span>
+</div>
+<!-- Brand Text Labels -->
+<div class="flex flex-col">
+<h1 class="text-3xl font-extrabold tracking-wider text-white font-sans leading-none flex items-center">
+              DRYFTQ
+            </h1>
+<span class="text-xl font-normal text-gray-100 tracking-normal mt-1 leading-tight">
+              Collect
+            </span>
+</div>
+</div>
+<!-- END: Brand Identity Header -->
+<!-- Section Heading -->
+<h2 class="text-white text-lg font-medium tracking-wide mb-6 text-center">
+          Sign in to continue
+        </h2>
+<!-- BEGIN: Authentication Form -->
+<form class="w-full space-y-4" data-purpose="credentials-form" onsubmit="event.preventDefault();">
+<!-- Employee ID Field -->
+<div class="relative group">
+<label class="sr-only" for="employee-id">Employee ID</label>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-white transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="w-full bg-[#161D2B] text-gray-100 placeholder-gray-400 pl-12 pr-4 py-3.5 rounded-xl border border-[#263147] focus:outline-none focus:border-[#E84518] focus:ring-1 focus:ring-[#E84518] transition-all text-sm shadow-inner" id="employee-id" name="employeeId" placeholder="Employee ID" required="" type="text"/>
+</div>
+<!-- Password Field with View Toggle -->
+<div class="relative group">
+<label class="sr-only" for="password">Password</label>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-white transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="w-full bg-[#161D2B] text-gray-100 placeholder-gray-400 pl-12 pr-12 py-3.5 rounded-xl border border-[#263147] focus:outline-none focus:border-[#E84518] focus:ring-1 focus:ring-[#E84518] transition-all text-sm shadow-inner tracking-wider" id="password" name="password" placeholder="Password" required="" type="password"/>
+<!-- Password Visibility Toggle Button -->
+<button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-200 transition-colors" data-purpose="password-visibility-toggle" id="togglePassword" type="button">
+<svg class="w-5 h-5" fill="none" id="eyeIcon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Submit / Login CTA Button -->
+<div class="pt-2">
+<button class="w-full bg-[#E84518] hover:bg-[#d83c11] active:scale-[0.99] text-white font-medium text-base py-3.5 rounded-xl shadow-lg shadow-orange-950/40 transition-all duration-150 ease-in-out cursor-pointer text-center" type="submit">
+              Login
+            </button>
+</div>
+<!-- Forgot Password Link -->
+<div class="text-center pt-3">
+<a class="text-sm font-normal text-gray-300 hover:text-white transition-colors duration-150 inline-block focus:outline-none focus:underline" href="#forgot-password">
+              Forgot Password?
+            </a>
+</div>
+</form>
+<!-- END: Authentication Form -->
+</div>
+<!-- Bottom Panel Footer Metadata -->
+<footer class="absolute bottom-5 right-6 flex items-center space-x-3 text-xs text-gray-500 font-mono tracking-tight" data-purpose="system-version-tag">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>v2.4.1-COLLECT</span>
+</footer>
+</section>
+</main>
+<!-- END: Main Content Split Area -->
+<!-- BEGIN: Client-Side Interactivity Scripts -->
+<script data-purpose="interactive-actions">
+    document.addEventListener('DOMContentLoaded', () => {
+      const togglePasswordBtn = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eyeIcon');
+
+      // Password visibility toggle logic
+      togglePasswordBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        
+        // Update eye icon state visually
+        if (isPassword) {
+          eyeIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+          `;
+        } else {
+          eyeIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          `;
+        }
+      });
+    });
+  </script>
+<!-- END: Client-Side Interactivity Scripts -->
+</body></html>

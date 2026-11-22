@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Screen 6: Review Submission - DRYFTQ COLLECT</title>
+<!-- Tailwind CSS v3 CDN with forms and container-queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            appBg: '#050A14',
+            containerBg: '#080D19',
+            cardBg: '#171F2E',
+            accentOrange: '#F15A19',
+            accentPurple: '#8B55B8',
+            accentGreen: '#36B879',
+            borderOutline: '#626773',
+            dividerLine: '#343C4B',
+            btnBackBg: '#252C3A',
+            subText: '#C2C7D1'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-enhancements">
+    /* Subtle custom transitions and styling */
+    .smooth-transition {
+      transition: all 0.2s ease-in-out;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #343C4B;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#050A14] text-white min-h-screen flex items-center justify-center p-4 antialiased font-sans select-none">
+<!-- BEGIN: ApplicationCardContainer -->
+<main class="w-[94%] max-w-5xl bg-[#080D19] border border-[#3d4758] rounded-[28px] shadow-2xl p-10 md:p-14 flex flex-col gap-8 relative" data-purpose="submission-container" id="review-submission-modal">
+<!-- BEGIN: HeaderSection -->
+<header class="flex items-center gap-5" data-purpose="screen-header"><!-- Step Number Badge -->
+<div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#F15A19] flex items-center justify-center font-black text-white text-3xl tracking-tight shadow-lg shrink-0" data-purpose="step-badge">
+  6
+</div>
+<!-- Screen Title -->
+<h1 class="text-3xl md:text-5xl font-black tracking-wider uppercase text-white">
+  Review Submission
+</h1></header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: MainContentGrid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-0 relative items-stretch" data-purpose="content-grid">
+<!-- Left Column: Review Items (~58% equivalent to 7 cols) -->
+<div class="md:col-span-7 flex flex-col pr-0 md:pr-10 pb-8 md:pb-0" data-purpose="left-submission-items"><h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white mb-6">
+  Review Your Submission
+</h2>
+<!-- Cards List -->
+<div class="flex flex-col gap-5 md:gap-6">
+  <!-- Card 1: Machine Context -->
+  <article class="bg-[#131b28] border border-[#2b3648] rounded-2xl p-5 md:p-6 flex items-center gap-5 hover:border-[#626773] smooth-transition" data-purpose="review-card-machine">
+    <!-- Circular Icon Badge (Orange) -->
+    <div class="w-16 h-16 md:w-[72px] md:h-[72px] rounded-full bg-[#F15A19] flex items-center justify-center shrink-0 shadow-inner">
+      <!-- Hardhat / Worker SVG -->
+      <svg class="w-8 h-8 md:w-9 md:h-9 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2a7 7 0 0 0-7 7v1H4a2 2 0 0 0-2 2v1h20v-1a2 2 0 0 0-2-2h-1V9a7 7 0 0 0-7-7zm-5 8V9a5 5 0 0 1 10 0v1H7zm5 5c-3.87 0-7 2.13-7 5v1h14v-1c0-2.87-3.13-5-7-5zm0 2c2.21 0 4 1.12 4.78 2H7.22c.78-.88 2.57-2 4.78-2z"></path>
+      </svg>
+    </div>
+    <!-- Text Meta -->
+    <div class="flex flex-col">
+      <span class="text-xl md:text-2xl font-bold text-white mb-1.5 leading-tight">Machine Context</span>
+      <span class="text-base md:text-lg text-[#d1d5db] font-medium">HSM 2 - Morning Shift</span>
+    </div>
+  </article>
+  <!-- Card 2: Observation -->
+  <article class="bg-[#131b28] border border-[#2b3648] rounded-2xl p-5 md:p-6 flex items-center gap-5 hover:border-[#626773] smooth-transition" data-purpose="review-card-observation">
+    <!-- Circular Icon Badge (Purple) -->
+    <div class="w-16 h-16 md:w-[72px] md:h-[72px] rounded-full bg-[#8B55B8] flex items-center justify-center shrink-0 shadow-inner">
+      <!-- Observation / Team / Sight SVG -->
+      <svg class="w-8 h-8 md:w-9 md:h-9 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path>
+      </svg>
+    </div>
+    <!-- Text Meta -->
+    <div class="flex flex-col">
+      <span class="text-xl md:text-2xl font-bold text-white mb-1.5 leading-tight">Observation</span>
+      <span class="text-base md:text-lg text-[#d1d5db] font-medium">Vibration in gearbox casing</span>
+    </div>
+  </article>
+  <!-- Card 3: Evidence -->
+  <article class="bg-[#131b28] border border-[#2b3648] rounded-2xl p-5 md:p-6 flex items-center gap-5 hover:border-[#626773] smooth-transition" data-purpose="review-card-evidence">
+    <!-- Circular Icon Badge (Green) -->
+    <div class="w-16 h-16 md:w-[72px] md:h-[72px] rounded-full bg-[#36B879] flex items-center justify-center shrink-0 shadow-inner">
+      <!-- Evidence / Photos & Document SVG -->
+      <svg class="w-8 h-8 md:w-9 md:h-9 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 14H6l3-4 2 2.5 3-3.86L18 17zM5 5h14v2H5V5z"></path>
+      </svg>
+    </div>
+    <!-- Text Meta -->
+    <div class="flex flex-col">
+      <span class="text-xl md:text-2xl font-bold text-white mb-1.5 leading-tight">Evidence</span>
+      <span class="text-base md:text-lg text-[#d1d5db] font-medium">3 Photos + 1 Video</span>
+    </div>
+  </article>
+</div></div>
+<!-- Right Column: Status Panel (~42% equivalent to 5 cols) -->
+<div class="md:col-span-5 flex flex-col md:pl-12 pt-8 md:pt-0 border-t md:border-t-0 md:border-l border-[#2d3748]" data-purpose="right-status-column"><h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white mb-6">
+  Status
+</h2>
+<!-- Status Tag with Indicator Dot -->
+<div class="flex items-center gap-3.5 mt-1" data-purpose="status-indicator-block"><span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#36B879] shadow-[0_0_12px_rgba(54,184,121,0.6)] animate-pulse shrink-0"></span>
+  <span class="text-2xl md:text-3xl font-bold text-[#36B879] tracking-wide">
+    Ready to Submit
+  </span></div></div>
+</section>
+<!-- END: MainContentGrid -->
+<!-- BEGIN: FooterActions -->
+<footer class="pt-8 mt-2 border-t border-[#2d3748] flex items-center gap-5 justify-start" data-purpose="footer-actions"><!-- Back Action Button -->
+<button class="px-10 md:px-12 py-5 min-h-[64px] rounded-xl bg-[#252C3A] hover:bg-[#313a4d] border border-[#3b475c] text-white text-xl md:text-2xl font-bold active:scale-95 smooth-transition flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-[#626773]" id="btn-back" type="button">
+  <span class="text-2xl md:text-3xl leading-none">←</span>
+  <span>Back</span>
+</button>
+<!-- Submit Action Button -->
+<button class="px-14 md:px-16 py-5 min-h-[64px] min-w-[200px] rounded-xl bg-[#F15A19] hover:bg-[#ff6826] text-white text-xl md:text-2xl font-black tracking-wide transform transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 hover:shadow-[0_0_25px_rgba(241,90,25,0.6)] active:translate-y-0.5 active:scale-95 active:brightness-90 shadow-xl shadow-orange-950/40 focus:outline-none focus:ring-2 focus:ring-[#F15A19]" id="btn-submit" type="button">
+  Submit
+</button></footer>
+<!-- END: FooterActions -->
+<!-- BEGIN: ConfirmationOverlayModal (Hidden by default) -->
+<div class="hidden absolute inset-0 bg-[#080D19]/95 backdrop-blur-sm rounded-[20px] flex flex-col items-center justify-center p-6 text-center z-20" data-purpose="submission-confirmation-dialog" id="submit-modal">
+<div class="w-14 h-14 rounded-full bg-[#36B879]/20 border border-[#36B879] flex items-center justify-center mb-4">
+<svg class="w-8 h-8 text-[#36B879]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Submission Successful!</h3>
+<p class="text-sm text-[#C2C7D1] mb-6 max-w-xs">
+        Your observation for HSM 2 (Morning Shift) has been recorded successfully.
+      </p>
+<button class="px-6 py-2 rounded-lg bg-[#252C3A] hover:bg-[#343C4B] text-white text-sm font-medium smooth-transition" id="btn-modal-close">
+        Close
+      </button>
+</div>
+<!-- END: ConfirmationOverlayModal -->
+</main>
+<!-- END: ApplicationCardContainer -->
+<!-- BEGIN: InteractiveHandlers -->
+<script data-purpose="event-handlers">
+    document.addEventListener('DOMContentLoaded', () => {
+      const submitBtn = document.getElementById('btn-submit');
+      const backBtn = document.getElementById('btn-back');
+      const confirmationModal = document.getElementById('submit-modal');
+      const closeModalBtn = document.getElementById('btn-modal-close');
+
+      // Submit trigger displays feedback modal
+      submitBtn.addEventListener('click', () => {
+        confirmationModal.classList.remove('hidden');
+      });
+
+      // Close modal
+      closeModalBtn.addEventListener('click', () => {
+        confirmationModal.classList.add('hidden');
+      });
+
+      // Back navigation button behavior
+      backBtn.addEventListener('click', () => {
+        // Visual tactile reaction
+        backBtn.classList.add('opacity-75');
+        setTimeout(() => {
+          backBtn.classList.remove('opacity-75');
+          alert('Navigating back to Screen 5: Evidence Capture');
+        }, 150);
+      });
+    });
+  </script>
+<!-- END: InteractiveHandlers -->
+
+
+</body></html>

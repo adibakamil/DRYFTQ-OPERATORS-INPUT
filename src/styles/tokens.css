@@ -1,0 +1,54 @@
+:root {
+  /* Industrial surface hierarchy — flat, opaque, low-glare */
+  --bg: #050a14;
+  --surface: #080d19;
+  --surface-raised: #0e131e;
+  --card: #151d2b;
+  --card-2: #171f2e;
+  --card-hover: #1b2534;
+  --input-bg: #0b1220;
+
+  /* Borders */
+  --border: #626773;
+  --border-strong: #3d4758;
+  --border-soft: #253046;
+  --border-faint: #1c2637;
+
+  /* Signal accents */
+  --primary: #f15a19;
+  --primary-hover: #ff6a24;
+  --primary-deep: #c04310;
+  --primary-dim: rgba(241, 90, 25, 0.12);
+  --info: #3299e6;
+  --info-hover: #4eaaf0;
+  --info-dim: rgba(50, 153, 230, 0.12);
+  --success: #25d879;
+  --success-hover: #45e493;
+  --success-dim: rgba(37, 216, 121, 0.12);
+  --danger: #e34250;
+  --danger-dim: rgba(227, 66, 80, 0.12);
+  --warning: #f5a524;
+  --warning-dim: rgba(245, 165, 36, 0.12);
+  --purple: #8b55b8;
+
+  /* Type */
+  --text: #ffffff;
+  --text-2: #c2c7d1;
+  --text-3: #8b95a7;
+  --font-head: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+  /* Geometry */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --sidebar-w: 258px;
+  --topbar-h: 68px;
+
+  --shadow-card: 0 12px 32px -18px rgba(0, 0, 0, 0.9);
+  --shadow-pop: 0 22px 60px -20px rgba(0, 0, 0, 0.85);
+}

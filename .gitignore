@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vite/
+*.local
+.DS_Store
+Thumbs.db
+npm-debug.log*
+*.tsbuildinfo
+scripts/test-evidence.png
+scripts/preview-*.png

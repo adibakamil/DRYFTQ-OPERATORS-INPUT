@@ -1,0 +1,460 @@
+/* ============================================================
+   MOTION LAYER
+   Additive only — no colours, dimensions, typography or layout
+   values are changed here. All animation uses existing tokens.
+   ============================================================ */
+
+/* ---------- Preloader ---------- */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  pointer-events: none;
+}
+
+.preloader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.preloader__track {
+  width: 180px;
+  height: 2px;
+  overflow: hidden;
+  background: var(--border-soft);
+}
+
+.preloader__track span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--primary), var(--info));
+}
+
+.preloader__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--text-3);
+}
+
+/* ---------- App / page entrance ---------- */
+
+#root {
+  animation: appFade 0.6s ease-out both;
+}
+
+@keyframes appFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page-transition {
+  min-width: 0;
+}
+
+/* ---------- Header / sidebar appearance ---------- */
+
+.site-header,
+.topbar {
+  animation: headerEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+@keyframes headerEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sidebar {
+  animation: sidebarFade 0.7s ease-out both;
+}
+
+@keyframes sidebarFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sidebar__nav .nav-item {
+  animation: navItemIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.sidebar__nav .nav-item:nth-child(2) { animation-delay: 60ms; }
+.sidebar__nav .nav-item:nth-child(3) { animation-delay: 110ms; }
+.sidebar__nav .nav-item:nth-child(4) { animation-delay: 160ms; }
+.sidebar__nav .nav-item:nth-child(5) { animation-delay: 210ms; }
+.sidebar__nav .nav-item:nth-child(6) { animation-delay: 260ms; }
+
+@keyframes navItemIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scroll state — same colours, just a deeper separation line. */
+body.is-scrolled .site-header,
+body.is-scrolled .topbar {
+  border-bottom-color: var(--border-strong);
+  box-shadow: 0 10px 30px -22px rgba(0, 0, 0, 0.95);
+}
+
+/* ---------- Navigation link underline + hover ---------- */
+
+.site-header__link,
+.nav-item {
+  position: relative;
+  transition: color 0.24s ease, background 0.24s ease, transform 0.24s ease;
+}
+
+.site-header__link::after,
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.site-header__link:hover,
+.site-header__link:focus-visible,
+.nav-item:hover,
+.nav-item:focus-visible {
+  transform: translateY(-1px);
+}
+
+.site-header__link:hover::after,
+.site-header__link:focus-visible::after,
+.nav-item:hover::after,
+.nav-item:focus-visible::after,
+.nav-item--active::after {
+  transform: scaleX(1);
+}
+
+.site-header__icon,
+.site-header__user,
+.user-chip {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header__icon:hover,
+.site-header__user:hover,
+.user-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- Hero entrance ---------- */
+
+.login-page {
+  animation: heroPageIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroPageIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.login-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--bg);
+  animation: heroVeil 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroVeil {
+  from { opacity: 0.9; }
+  to { opacity: 0; }
+}
+
+.visual-tag,
+.visual-copy h2,
+.visual-copy p,
+.visual-metrics div {
+  will-change: transform, opacity;
+}
+
+/* ---------- Cards, tiles and interactive surfaces ---------- */
+
+.card,
+.kpi-card,
+.action-tile,
+.role-card,
+.quick-action,
+.wizard-card,
+.evidence-card,
+.review-item,
+.summary-list__row,
+.storage-note,
+.filter-row {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.kpi-card:hover,
+.card:hover,
+.wizard-card:hover,
+.review-item:hover,
+.summary-list__row:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pop);
+  border-color: var(--border-strong);
+}
+
+.action-tile:hover,
+.role-card:hover,
+.quick-action:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pop);
+}
+
+.action-tile:active,
+.quick-action:active,
+.role-card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.action-tile__icon,
+.quick-action svg,
+.role-card__icon {
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.action-tile:hover .action-tile__icon,
+.quick-action:hover svg,
+.role-card:hover .role-card__icon {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.action-tile__cta svg {
+  transition: transform 0.28s ease;
+}
+
+.action-tile:hover .action-tile__cta svg,
+.quick-action:hover svg {
+  transform: translateX(3px);
+}
+
+/* Image reveal + scale on hover */
+.evidence-card__media {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+}
+
+.evidence-card:hover .evidence-card__media {
+  transform: scale(1.07);
+}
+
+.evidence-card__play,
+.evidence-card__remove {
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.evidence-card:hover .evidence-card__play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.evidence-card__remove:hover {
+  transform: scale(1.12);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn,
+.link-btn,
+.id-pill,
+.evidence-card__remove,
+.step__circle {
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.28s ease, border-color 0.22s ease, background-color 0.22s ease,
+    color 0.22s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -14px rgba(0, 0, 0, 0.95);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+.link-btn:hover {
+  transform: translateX(2px);
+}
+
+.id-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-card);
+}
+
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 32%, rgba(255, 255, 255, 0.16) 50%, transparent 68%);
+  transform: translateX(-120%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.btn--primary:hover:not(:disabled)::after {
+  transform: translateX(120%);
+}
+
+/* ---------- Table rows ---------- */
+
+.data-table tbody tr {
+  transition: background-color 0.22s ease;
+}
+
+.data-table tbody tr:hover {
+  background: var(--card-hover);
+}
+
+/* ---------- Stat values ---------- */
+
+.kpi-card__value {
+  font-variant-numeric: tabular-nums;
+}
+
+.reveal-up.is-revealed .kpi-card__value,
+.reveal-fade.is-revealed .kpi-card__value {
+  animation: valuePop 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes valuePop {
+  from { opacity: 0; transform: translateY(6px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Success ring / floating accents ---------- */
+
+.success-ring {
+  animation: ringGlow 3.4s ease-in-out 0.8s infinite;
+}
+
+@keyframes ringGlow {
+  0%, 100% { box-shadow: 0 0 30px -6px rgba(37, 216, 121, 0.6); }
+  50% { box-shadow: 0 0 44px -4px rgba(37, 216, 121, 0.78); }
+}
+
+.role-header__badge,
+.wizard-card__badge {
+  animation: badgeFloat 5s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ---------- Modal + toast ---------- */
+
+.modal-backdrop {
+  animation: fadeIn 0.25s ease both;
+}
+
+.modal {
+  animation: modalPop 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+.toast {
+  animation: toastIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(24px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer__group span:not(.site-footer__sep) {
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.site-footer__group span:not(.site-footer__sep):hover {
+  color: var(--text-2);
+  transform: translateY(-2px);
+}
+
+/* ---------- Scroll reveal ----------
+   Elements are only tagged by ScrollReveal.tsx, so content stays
+   visible if JavaScript is unavailable. Paused keyframes let hover
+   transforms work normally once the reveal has completed. */
+
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-fade {
+  opacity: 0;
+  animation-duration: 0.65s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-delay: var(--reveal-delay, 0ms);
+  animation-fill-mode: none;
+  animation-play-state: paused;
+}
+
+.reveal-up { animation-name: revealUp; }
+.reveal-left { animation-name: revealLeft; }
+.reveal-right { animation-name: revealRight; }
+.reveal-fade { animation-name: revealFade; }
+
+.reveal-up.is-revealed,
+.reveal-left.is-revealed,
+.reveal-right.is-revealed,
+.reveal-fade.is-revealed {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes revealLeft {
+  from { opacity: 0; transform: translateX(-18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes revealFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

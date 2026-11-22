@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DRYFTQ COLLECT - Attach Evidence</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Custom Color Scheme Setup -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            appDarkBg: '#050A14',
+            appCardBg: '#080D19',
+            appUploadBg: '#151E2C',
+            appUploadBorder: '#697386',
+            appBorder: '#626773',
+            appOrange: '#F15A19',
+            appRed: '#E34250',
+            appMutedText: '#C2C7D1',
+            appBtnDark: '#252C3A',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    /* Subtle custom scrollbar and transitions */
+    .fade-out {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.25s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-[#050A14] min-h-screen flex items-center justify-center p-3 sm:p-6 text-white font-sans antialiased selection:bg-[#F15A19] selection:text-white">
+<!-- BEGIN: EvidenceModalContainer -->
+<main class="w-full max-w-4xl bg-[#080D19] border border-[#626773] rounded-[22px] shadow-2xl p-5 sm:p-7 md:p-8 flex flex-col gap-6" data-purpose="modal-container">
+<!-- BEGIN: HeaderSection -->
+<header class="flex items-center gap-3.5 pb-2" data-purpose="header">
+<!-- Step Number Badge -->
+<div class="w-9 h-9 sm:w-10 sm:h-10 bg-[#F15A19] rounded-lg flex items-center justify-center font-bold text-lg sm:text-xl text-white shadow-sm flex-shrink-0" data-purpose="step-badge">
+        5
+      </div>
+<!-- Step Title -->
+<h1 class="text-xl sm:text-2xl font-bold tracking-wider text-white uppercase" data-purpose="screen-title">
+        ATTACH EVIDENCE
+      </h1>
+</header>
+<!-- END: HeaderSection -->
+<!-- Section Heading -->
+<div class="px-0.5">
+<h2 class="text-lg sm:text-xl font-semibold text-white tracking-normal" data-purpose="section-title">
+        Attach Evidence
+      </h2>
+</div>
+<!-- BEGIN: UploadArea -->
+<section data-purpose="dropzone-area">
+<input accept=".jpg,.jpeg,.png,.mp4" class="hidden" id="fileUploadInput" multiple="" type="file"/>
+<div class="border border-dashed border-[#697386] rounded-[18px] bg-[#151E2C] py-8 sm:py-10 px-4 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-[#1a2536] transition-colors group" id="dropzone">
+<!-- Cloud Upload Icon -->
+<div class="mb-3 text-white transition-transform group-hover:-translate-y-0.5 duration-200" data-purpose="cloud-icon">
+<svg class="w-14 h-14 sm:w-16 sm:h-16" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24">
+<path d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- Upload Main Prompts -->
+<p class="text-xl sm:text-2xl font-semibold text-white leading-tight">
+          Drag &amp; drop files here
+        </p>
+<p class="text-lg sm:text-xl text-white/95 mt-1 font-normal leading-tight">
+          or click to upload
+        </p>
+<!-- Allowed Formats and Size Limits -->
+<p class="text-sm sm:text-base text-[#C2C7D1] mt-3 font-normal">
+          Supports: JPG, PNG, mp4, Max 10MB
+        </p>
+</div>
+</section>
+<!-- END: UploadArea -->
+<!-- BEGIN: EvidencePreviews -->
+<section class="grid grid-cols-1 sm:grid-cols-3 gap-4" data-purpose="evidence-cards-container" id="evidenceList">
+<!-- Card 1: Machine Image Preview -->
+<article class="relative group rounded-[16px] overflow-hidden border border-[#626773]/70 bg-[#151E2C] h-36 sm:h-40 shadow-md transition-all" data-purpose="image-evidence-card" id="card-1">
+<!-- Machinery Industrial Photo -->
+<img alt="Heavy industrial factory machinery with warm lighting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ42ipBjBOmNhhzMqwxnkKuTaiD_Ewu8NFc40i3yYaMFkOsqcQ65sTBL85UfuxzU78tAsQKERkOqn_CIJCNOERtB09ESTPNUzDRbFFQ7M69vXWQNg8rOoKikdFsyOUBw_v9QhYyBXlzPJLQdB4E6myqXkl96S-1GsAUigVLne2y4jhnM3JNJ5KPjZoLo6dqUDUS8KRub6KaDyb77mVC5xnyCoS0EpwdG0ZzR3YbtlV"/>
+<!-- Delete Button -->
+<button class="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-[#E34250] hover:bg-red-600 text-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 focus:outline-none" onclick="removeCard('card-1')" title="Remove evidence" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</article>
+<!-- Card 2: Machinery Video Preview -->
+<article class="relative group rounded-[16px] overflow-hidden border border-[#626773]/70 bg-[#151E2C] h-36 sm:h-40 shadow-md transition-all" data-purpose="video-evidence-card" id="card-2">
+<!-- Video Machinery Preview Frame -->
+<img alt="Industrial production facility thumbnail" class="w-full h-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj97dyU6MmU3s6ipEoysoe1yxvC_wOmYhr6NeAtdryYyGSZC7U6nxU6GieE0z2iIIQ_ZrD1PftqoRMk1vPVbmOqCzK9QBweQwvAlXpx0yYk4_hBSQIf2lCXPR1r1zciCEHXvK_40Dg6gTYAN7jKyreRec23r79_8sC3wrqC4Ll0XVe87SlWjJ7dfhscG9VzkLKB1k8BL4yIbG92wOYF2tR9e0fljxEEriD_7Fxh-py"/>
+<!-- Center Play Icon -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-[2px] flex items-center justify-center border border-white/40">
+<svg class="w-5 h-5 text-white ml-0.5 fill-current" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</div>
+</div>
+<!-- Duration Timestamp Badge -->
+<span class="absolute bottom-2.5 right-3 text-xs sm:text-sm font-medium text-white tracking-wide bg-black/60 px-1.5 py-0.5 rounded">
+          0:55
+        </span>
+<!-- Delete Button -->
+<button class="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-[#E34250] hover:bg-red-600 text-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 focus:outline-none" onclick="removeCard('card-2')" title="Remove evidence" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</article>
+<!-- Card 3: Audio Recording Preview -->
+<article class="relative group rounded-[16px] border border-[#626773]/70 bg-[#151E2C] h-36 sm:h-40 shadow-md p-4 flex items-center justify-between transition-all" data-purpose="audio-evidence-card" id="card-3">
+<!-- Mic Indicator & Duration Counter -->
+<div class="flex flex-col items-center justify-center pr-3 border-r border-[#626773]/40 min-w-[55px]">
+<!-- Microphone Icon -->
+<svg class="w-7 h-7 text-white stroke-[1.8]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke-linecap="round" stroke-linejoin="round"></path>
+<line x1="12" x2="12" y1="19" y2="23"></line>
+<line x1="8" x2="16" y1="23" y2="23"></line>
+</svg>
+<!-- Audio Timer -->
+<span class="text-xs sm:text-sm font-semibold text-white tracking-wider mt-1.5">
+            00:10
+          </span>
+</div>
+<!-- Simulated Audio Waveform -->
+<div class="flex-1 flex items-center justify-center gap-1 sm:gap-1.5 px-3 overflow-hidden" data-purpose="waveform-visualizer">
+<span class="w-[3px] h-3 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-6 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-4 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-8 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-12 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-16 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-7 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-14 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-9 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-16 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-12 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-5 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-10 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-4 bg-[#C2C7D1] rounded-full"></span>
+<span class="w-[3px] h-2 bg-[#C2C7D1] rounded-full"></span>
+</div>
+<!-- Delete Button -->
+<button class="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-[#E34250] hover:bg-red-600 text-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 focus:outline-none" onclick="removeCard('card-3')" title="Remove evidence" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</article>
+</section>
+<!-- END: EvidencePreviews -->
+<!-- BEGIN: NavigationFooter -->
+<footer class="flex items-center justify-between pt-4 mt-2" data-purpose="footer-navigation">
+<!-- Back Action Button -->
+<button class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-[#252C3A] hover:bg-[#31394a] text-white text-base font-semibold rounded-xl transition duration-150 shadow-md active:scale-95" data-purpose="btn-back" type="button">
+<span>←</span>
+<span>Back</span>
+</button>
+<!-- Next Action Button -->
+<button class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-[#F15A19] hover:bg-[#ff6924] text-white text-base font-semibold rounded-xl transition duration-150 shadow-md active:scale-95" data-purpose="btn-next" type="button">
+<span>Next</span>
+<span>→</span>
+</button>
+</footer>
+<!-- END: NavigationFooter -->
+</main>
+<!-- END: EvidenceModalContainer -->
+<!-- BEGIN: InteractiveHandlers -->
+<script data-purpose="upload-and-card-interactions">
+    // Card Removal Handler
+    function removeCard(cardId) {
+      const card = document.getElementById(cardId);
+      if (card) {
+        card.classList.add('fade-out');
+        setTimeout(() => {
+          card.remove();
+        }, 220);
+      }
+    }
+
+    // Dropzone Click Trigger
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('fileUploadInput');
+
+    dropzone.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    // Drag & Drop visual feedback
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropzone.classList.add('border-[#F15A19]', 'bg-[#1b273a]');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('border-[#F15A19]', 'bg-[#1b273a]');
+      });
+    });
+  </script>
+<!-- END: InteractiveHandlers -->
+</body></html>
